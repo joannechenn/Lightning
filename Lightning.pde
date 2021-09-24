@@ -44,5 +44,3 @@ void mousePressed()
   endX = 150;
   endY = 0;
 }
-
-
