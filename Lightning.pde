@@ -20,7 +20,7 @@ void draw(){
   while(endY < 200){
     endX = startX + ((int)(Math.random() * 19) - 9);
     endY = startY + ((int)(Math.random() * 10));
-    strokeWeight(3);
+    strokeWeight(3);   
     stroke(255, 255, 0);
     line(startX, startY, endX, endY);
     startX = endX;
