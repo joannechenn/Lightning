@@ -8,13 +8,15 @@ int endY = 0;
 void setup()
 {
   size(400, 400);
-  background(0);
-  frameRate(15);
   img = requestImage("pokemonbattle.png");
+  //background(0);
+  image(img, 0, 0, width, height);
+  frameRate(12);
 }
 
 
 void draw(){
+  tint(255, 153);  // Display at half opacity
   image(img, 0, 0, width, height);
   noStroke();
   fill(0, 0, 0, 30);
