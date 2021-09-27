@@ -88,7 +88,7 @@ void draw(){
   //when ENTER is pressed, switch to button background + load button
   if (keyCode == ENTER){
     image(img3, 0, 380, width, height/4.2); 
-    attackButton = new Button(225, 407, 170, 65, "Thuderbolt", 255, 255, 153);
+    attackButton = new Button(222, 407, 170, 65, "Thuderbolt", 255, 255, 153);
     attackButton.render();
   }
   
