@@ -1,48 +1,69 @@
+//variables
 PImage img;
-int startX = 275;
+PImage img2;
+PImage img3;
+int startX = 440;
 int startY = 0;
 int endX = 150;
 int endY = 0;
+Button attackButton;
 
 
 void setup()
 {
-  size(400, 400);
-  img = requestImage("pokemonbattle.png");
-  //background(0);
-  image(img, 0, 0, width, height);
+  size(600, 500);
+  
+  //background
+  img = requestImage("newpokemonbattle.png");
+  img2 = requestImage("whatwillpikado.png");
+  img3 = requestImage("buttonbackground.png");
+  image(img, 0, 0, width, height/1.3);
+  
+  //speed of lightning
   frameRate(12);
 }
 
 
 void draw(){
-  tint(255, 153);  // Display at half opacity
-  image(img, 0, 0, width, height);
-  noStroke();
-  fill(0, 0, 0, 30);
-  rect(0, 0, 400, 400);
-  //endY = 0;
-  while(endY < 200){
+  //fading effect
+  tint(245, 120);
+  image(img, 0, 0, width, height/1.3);
+  
+  //lightning
+  while(endY < 225){
     endX = startX + ((int)(Math.random() * 19) - 9);
     endY = startY + ((int)(Math.random() * 10));
-    strokeWeight(3);   
+    strokeWeight(4);   
     stroke(255, 255, 0);
     line(startX, startY, endX, endY);
     startX = endX;
     startY = endY;
-    strokeWeight(15);
+    strokeWeight(17);
     stroke(255, 255, 255, 50);
     line(startX, startY, endX, endY);
     startX = endX;
     startY = endY;
   }
+  
+  //background pt.2
+  tint(255, 255);
+  image(img2, 0, 380, width, height/4.2);
+  
+  //switch to button background when ENTER is pressed
+  if (keyCode == ENTER){
+    image(img3, 0, 380, width, height/4.2); 
+    attackButton = new Button(100, 100, 100, 50, "Thuderbolt", 0, 200, 200);
+    attackButton.render();
+    attackButton.update();
+  }
+  
 }
 
 
-void mousePressed()
-{
-  startX = 275;
-  startY = 0;
-  endX = 150;
-  endY = 0;
-}
+//void mousePressed()
+//{
+  //startX = 440;
+  //startY = 0;
+  //endX = 150;
+  //endY = 0;
+//}
